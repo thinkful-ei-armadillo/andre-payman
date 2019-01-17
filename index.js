@@ -1,3 +1,5 @@
+/* global $ */
+
 'use strict';
 
 function changeImg(src, alt) {
@@ -7,9 +9,8 @@ function changeImg(src, alt) {
 }
 
 $(function() {
-  $('a').on('click', function(event) {
-    let imgElement = $(this).find('input');
-    console.log(imgElement.src, $(imgElement).prop('src'));
+  $('.thumbnail').on('click', function(event) {
+    let imgElement = $(this).find('img');
     changeImg(imgElement.attr('src'), imgElement.attr('alt'));
   });
 });
